@@ -26,7 +26,9 @@ async function main() {
     urgency: z
       .enum(['low', 'medium', 'high'])
       .describe('The probable urgency of the support request.'),
-    language: z.string(),
+    language: z
+      .string()
+      .describe("The full name of the language the support request is in (e.g., English, Spanish, German)."),
   });
 
   // TODO: Use generateText with Output.object() to classify the requests
